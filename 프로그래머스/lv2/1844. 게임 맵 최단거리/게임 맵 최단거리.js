@@ -12,6 +12,24 @@ function solution(maps) {
     const moveX = [1, 0, -1, 0];
     const moveY = [0, 1, 0, -1];
 
+    const visit = (x, y, count) => {
+        visited[x][y] = true;
+
+        // 현재 x, y 위치에서 상, 하, 좌, 우 로 이동할 반복문
+        for (let i = 0; i < moveX.length; i++) {
+            // movedX, Y 로 설정함.
+            const movedX = x + moveX[i];
+            const movedY = y + moveY[i];
+
+            // 만약, movedX, movedY 가 배열의 범위 안에 있고, 그 값 위치가 아직 방문하지 않았고, 그 위치를 방문할 수 있다면 (값이 1이라면)
+            if (movedX >= 0 && movedX < n && movedY >= 0 && movedY < m && !visited[movedX][movedY] 
+                && maps[movedX][movedY] == 1) {
+                // queue 에 그 값을 넣음
+                queue.push([x + moveX[i], y + moveY[i], count + 1]);
+            }
+        }
+    }
+
     // BFS
     while (queue.length > queueIndex) {
         // 일단 queue 에 있는 값을 꺼냄
@@ -32,24 +50,6 @@ function solution(maps) {
             visit(now[0], now[1], now[2])
         }
     }
-
-    function visit(x, y, count) {
-        visited[x][y] = true;
-
-        // 현재 x, y 위치에서 상, 하, 좌, 우 로 이동할 반복문
-        for (let i = 0; i < moveX.length; i++) {
-            // movedX, Y 로 설정함.
-            const movedX = x + moveX[i];
-            const movedY = y + moveY[i];
-
-            // 만약, movedX, movedY 가 배열의 범위 안에 있고, 그 값 위치가 아직 방문하지 않았고, 그 위치를 방문할 수 있다면 (값이 1이라면)
-            if (movedX >= 0 && movedX < n && movedY >= 0 && movedY < m && !visited[movedX][movedY] 
-                && maps[movedX][movedY] == 1) {
-                // queue 에 그 값을 넣음
-                queue.push([x + moveX[i], y + moveY[i], count + 1]);
-            }
-        }
-    }
-
+    
     return answer;
 }
