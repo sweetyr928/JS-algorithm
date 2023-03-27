@@ -1,21 +1,16 @@
 function solution(word) {
-  const result = [];
-  const str = "";  
+    let result = [];
     
-  const dfs = (word, length) => {
-      const alpha = ['A','E','I','O','U'];
-      if (length === word.length) {
-          result.push(word);
-      
-          return;
-      }
-      alpha.map((w) => {
-          dfs(word + w, length);
-      });
-  };
+    const dfs = (str,length) => {
+        const alpha = ['A','E','I','O','U'];
+        if(length === str.length){
+            result.push(str); return;
+        }
+        
+        alpha.map((el) => dfs(str+el,length));
+    }
     
-  for (let i = 1; i <= 5; i++) dfs(str, i);
+    for(let i=1;i<=5;i++) dfs("",i);
     
-  return result.sort().indexOf(word) + 1;
+    return result.sort().indexOf(word) + 1;
 }
-
