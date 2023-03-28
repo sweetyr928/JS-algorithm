@@ -1,31 +1,28 @@
 function solution(numbers) {
-    const answer = [];
-    numbers = numbers.split(''); 
+    let answer = [];
+    numbers = numbers.split("");
     
-    // 소수 판별
-    const isPrimeNum = (num) => {
-        if(num<=1) return false;
-        for (let i = 2; i*i <= num; i++) {
-            if (num % i === 0) return false;
+    const isRight = (num) => {
+        if(num <= 1) return false;
+        for(let i=2;i<=Math.sqrt(num);i++){
+            if(num % i === 0) return false;
         }
         return true;
     }
     
-    // 순열 만들기
-    const getPermutation = (arr, fixed) => {
-        if(arr.length >= 1) {
-            for (let i=0; i<arr.length; i++) {
-                const newNum = fixed + arr[i];
-                const newArr = [...arr];
-                newArr.splice(i, 1);
-                if (!answer.includes(+newNum) && isPrimeNum(+newNum)){
-                    answer.push(+newNum);
-                }
-                getPermutation(newArr, newNum); 
+    const dfs = (arr,fixed) => {
+        if(arr.length >= 1){
+            for(let i=0;i<arr.length;i++){
+                let newfixed = fixed + arr[i];
+                let newArr = arr.slice();
+                newArr.splice(i,1);
+                if(!answer.includes(+newfixed) && isRight(+newfixed)) answer.push(+newfixed);
+                dfs(newArr, newfixed);
             }
         }
     }
     
-    getPermutation(numbers, '');
+    dfs(numbers,"");
+    
     return answer.length;
 }
