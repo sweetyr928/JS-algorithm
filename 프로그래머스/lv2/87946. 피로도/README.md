@@ -1,10 +1,10 @@
 # [level 2] 피로도 - 87946 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/87946#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/87946?language=javascript) 
 
 ### 성능 요약
 
-메모리: 33.4 MB, 시간: 0.28 ms
+메모리: 33.4 MB, 시간: 0.19 ms
 
 ### 구분
 
