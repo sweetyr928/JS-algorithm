@@ -1,20 +1,23 @@
-const solution = (tickets) => {
-  let answer = [];
-  const DFS = (airport, tickets, path) => {
-    let newPath = [...path, airport];
-    if(tickets.length === 0){
-      answer.push(newPath);
-    }
-    else{
-      tickets.map((ticket, idx) => {
-        if(ticket[0] === airport){
-          let copiedTickets = [...tickets];
-          const [[from, to]] = copiedTickets.splice(idx, 1);
-          DFS(to, copiedTickets, newPath)
+function solution(tickets) {
+    let answer = [];
+    
+    const dfs = (target, tickets, path) => {    
+        let newPath = [...path, target];
+        if(tickets.length === 0){
+            answer.push(newPath);
         }
-      });
+        else{
+            tickets.map((el,idx) => {
+                if(el[0] === target){
+                    let newTickets = tickets.slice();
+                    newTickets.splice(idx,1); 
+                    dfs(el[1], newTickets, newPath);
+                }
+            })
+        }
     }
-  };
-  DFS("ICN", tickets, []);
-  return answer.sort()[0];
+    
+    dfs("ICN", tickets, []);
+    
+    return answer.sort()[0];
 }
