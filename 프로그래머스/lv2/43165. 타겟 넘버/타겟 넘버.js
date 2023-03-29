@@ -1,18 +1,16 @@
 function solution(numbers, target) {
-    let ans = 0;
-
-    const dfs = (idx,sum) => {
-       if(idx === numbers.length){
-           if(sum === target) ans++;
-           return;
-       }
-        
-        dfs(idx+1,sum+numbers[idx]);
-        dfs(idx+1,sum-numbers[idx]);
+    let answer = 0;
+    
+    const dfs = (i,sum) => {
+        if(i === numbers.length){
+            if(sum === target) answer++;
+        }else{
+            dfs(i + 1, sum + numbers[i]);
+            dfs(i + 1, sum - numbers[i]);
+        }
     }
     
     dfs(0,0);
     
-    return ans;
+    return answer;
 }
-
