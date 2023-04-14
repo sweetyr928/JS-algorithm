@@ -1,23 +1,22 @@
 function solution(n, computers) {
-    let count = 0;
     let visited = new Array(n).fill(0);
-    
-    const dfs = (node) => {
+    let answer = 0;
+
+    function dfs(node) {
         visited[node] = 1;
-        for(let i=0;i<n;i++){
-            if(!visited[i] && computers[node][i]){
+        for(let i=0;i<computers[node].length;i++) {
+            if(computers[node][i]===1 && !visited[i]){
                 dfs(i);
             }
         }
     }
     
-    for(let i=0;i<n;i++){
-        if(!visited[i]){
-            dfs(i);
-            count++;
+    for (let i=0; i < computers.length; i++) {
+        if (!visited[i]) {
+            dfs(i)
+            answer++;
         }
     }
     
-    return count;
+    return answer;
 }
-
