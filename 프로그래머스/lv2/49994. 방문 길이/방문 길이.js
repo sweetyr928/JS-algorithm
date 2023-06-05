@@ -1,19 +1,17 @@
 function solution(dirs) {
-    let move = { L: [-1, 0], R: [1, 0], U: [0, 1], D: [0, -1] };
-    let now = [0, 0];
-    let route = new Set();
+    let answer = new Set();
+    let now = [0,0];
+    let move = {"U" : [0,1], "D" : [0,-1], "L" : [-1,0], "R" : [1,0]};
     
-    for (let dir of dirs) {
-        let nowX = now[0] + move[dir][0];
-        let nowY = now[1] + move[dir][1];
-        
-        if (nowX > 5 || nowX < -5 || nowY > 5 || nowY < -5) continue;
-        
-        route.add("" + now[0] + now[1] + nowX + nowY);
-        route.add("" + nowX + nowY + now[0] + now[1]);
-        
-        now = [nowX, nowY];
+    for(let i=0;i<dirs.length;i++){
+        let nowX = now[0] + move[dirs[i]][0];
+        let nowY = now[1] + move[dirs[i]][1];
+        if(nowX <= 5 && nowX >= -5 && nowY <= 5 && nowY >= -5){
+            answer.add(`${now[0]}${now[1]}${nowX}${nowY}`);
+            answer.add(`${nowX}${nowY}${now[0]}${now[1]}`);
+            now = [nowX, nowY];
+        }
     }
     
-    return route.size / 2;
+    return answer.size / 2;
 }
