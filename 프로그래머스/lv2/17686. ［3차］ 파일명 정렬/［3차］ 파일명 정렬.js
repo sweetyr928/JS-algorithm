@@ -15,7 +15,7 @@ function solution(files) {
         let newA = a[0].toUpperCase(), newB = b[0].toUpperCase();
         if(newA > newB) return 1;
         else if(newA < newB) return -1;
-        else return parseInt(a[1]) - parseInt(b[1])
+        else return a[1] - b[1]
     })
     
     return answer.map((el) => el.join(""));
