@@ -1,31 +1,30 @@
-const solution = (arr) => {
-    let zero = 0;
-    let one = 0;
-	
-  	// 쪼개는 함수 (시작행, 시작열, 비교할 길이)
-    const divide = (row, col, n) => {
-        let canDivide = true;
-        // 처음부터 전부 숫자가 같은 지 비교
-        for (let y=row; y < row+n; y++) {
-            for (let x=col; x < col+n; x++) {
-                if (arr[row][col] !== arr[y][x]) 
-                    canDivide = false;
+function solution(arr) {
+    let answer = [0,0];
+    
+    const check = (row,col,n) => {
+        let allSame = true;
+        for(let i=row;i<row+n;i++){
+            for(let j=col;j<col+n;j++){
+                if(arr[i][j] !== arr[row][col]) {
+                    allSame = false;
+                    break;
+                }
             }
-        };
-      	// 만약 같은 값으로 이루어 지지 않았으면, 4분할 하여 n/2씩 비교하는 재귀함수를 호출
-        if (!canDivide) {
-            const halfN = parseInt(n/2);
-            divide(row, col, halfN)
-            divide(row, col+halfN, halfN)
-            divide(row+halfN, col, halfN)
-            divide(row+halfN, col+halfN, halfN)
-        // 만약 같은 값이면 행렬의 시작점을 비교하여 카운팅
-        } else {
-            if (arr[row][col]) one ++;
-            else zero ++;
+        }
+        
+        if(!allSame){
+            let newN = parseInt(n/2);
+            check(row,col,newN);
+            check(row,col+newN,newN);
+            check(row+newN,col,newN);
+            check(row+newN,col+newN,newN);
+        }else{
+            if(arr[row][col]) answer[1]++;
+            else answer[0]++;
         }
     }
-    divide(0, 0, arr.length);
     
-    return [zero, one];    
+    check(0,0,arr.length);
+    
+    return answer;
 }
