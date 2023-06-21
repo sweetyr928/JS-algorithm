@@ -1,12 +1,12 @@
 function solution(n) {
     let answer = '';
-    const numArr = [4, 1, 2];
-
-    while(n) {
-        answer = numArr[n%3] + answer;
-        // 0 == false
-        n = n%3 === 0 ? n/3 -1 : Math.floor(n/3);
+    let arr = ['4','1','2'];
+    
+    while(n>0){
+        answer = arr[n%3] + answer;
+        
+        n = Math.ceil(n/3-1);
     }
-
+    
     return answer;
 }
