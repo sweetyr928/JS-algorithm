@@ -3,9 +3,9 @@ function solution(citations) {
     citations.sort((a,b) => b-a)
     
     while(true){
-        if(citations.filter(el => el >= ans).length < ans) break;
-        ans++;
+        if(citations.filter(el => el >= ans).length < ans) break
+        ans++
     }
     
-    return ans-1;
+    return ans-1
 }
