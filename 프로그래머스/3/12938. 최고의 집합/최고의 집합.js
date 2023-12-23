@@ -3,7 +3,7 @@ function solution(n, s) {
 
     const answer = new Array(n).fill(Math.floor(s / n))
     for(let i = 0; i < s % n; i ++)
-        answer[answer.length - 1 - i]++;
+        answer[answer.length - 1 - i]++
   
-    return answer;
+    return answer
 }
