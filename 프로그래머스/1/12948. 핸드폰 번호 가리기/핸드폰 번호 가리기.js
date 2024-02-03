@@ -6,5 +6,5 @@ function solution(phone_number) {
         star += '*'
     }
     
-    return star + behindFour;
+    return star + behindFour
 }
