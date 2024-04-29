@@ -2,13 +2,13 @@ function solution(k, dungeons) {
     let ans = []
     dungeons.sort((a,b) => b[0]-a[0])
     
-    const dfs = (newK, newD) => {
-        ans.push(dungeons.length - newD.length)
+    const dfs = (newK, newDundeons) => {
+        ans.push(dungeons.length - newDundeons.length)
         if(newK > 0){
-            for(let i=0;i<newD.length;i++){
-                if(newK >= newD[i][0]){
-                    let tempK = newK - newD[i][1]
-                    let tempD = newD.slice()
+            for(let i=0;i<newDundeons.length;i++){
+                if(newK >= newDundeons[i][0]){
+                    let tempK = newK - newDundeons[i][1]
+                    let tempD = newDundeons.slice()
                     tempD.splice(i,1)
                     dfs(tempK,tempD)
                 } 
