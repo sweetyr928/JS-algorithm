@@ -1,9 +1,9 @@
 function solution(k, dungeons) {
-    let ans = []
+    let answer = []
     dungeons.sort((a,b) => b[0]-a[0])
     
     const dfs = (newK, newDundeons) => {
-        ans.push(dungeons.length - newDundeons.length)
+        answer.push(dungeons.length - newDundeons.length)
         if(newK > 0){
             for(let i=0;i<newDundeons.length;i++){
                 if(newK >= newDundeons[i][0]){
@@ -18,5 +18,5 @@ function solution(k, dungeons) {
     
     dfs(k, dungeons)
     
-    return Math.max(...ans)
+    return Math.max(...answer)
 }
