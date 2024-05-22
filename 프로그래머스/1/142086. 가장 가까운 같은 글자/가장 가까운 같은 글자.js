@@ -1,8 +1,8 @@
 function solution(s) {
-    let answer = [];
+    let answer = []
     let obj = {}
     
-    for(let i=0;i<s.length;i++){
+    for(let i = 0;i < s.length;i++){
         if(!obj[s[i]]){
             obj[s[i]] = [i]
             answer.push(-1)
@@ -12,5 +12,5 @@ function solution(s) {
         }
     }
     
-    return answer;
+    return answer
 }
