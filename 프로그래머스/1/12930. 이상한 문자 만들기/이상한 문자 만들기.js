@@ -1,5 +1,5 @@
 function solution(s) {
-    var answer = ''
+    let answer = ''
     let arr = s.split(' ')
     let temp = ''
     
