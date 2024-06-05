@@ -20,8 +20,8 @@ function solution(s) {
   
     newS.sort((a,b) => a.length - b.length)
   
-    for(let i=0;i<newS.length;i++){
-          for(let j=0;j<newS[i].length;j++){
+    for(let i = 0;i < newS.length;i++){
+          for(let j = 0;j < newS[i].length;j++){
             if(!ans.includes(newS[i][j])) ans.push(newS[i][j])
           }
     }
