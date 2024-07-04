@@ -3,7 +3,7 @@ function solution(topping) {
     let total = new Map()
     let brother = new Set()
     
-    for(let i=0;i<topping.length;i++){
+    for(let i = 0;i < topping.length;i++){
         total.set(topping[i], (total.get(topping[i]) || 0) + 1)
     }
     
