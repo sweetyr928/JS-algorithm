@@ -7,13 +7,13 @@ function solution(word) {
             dic.push(fixed)
             return
         }
-        for(let i=0;i<alpha.length;i++){
+        for(let i = 0;i < alpha.length;i++){
             let newFixed = fixed + alpha[i]
             dfs(newFixed,len)
         }
     }
         
-    for(let i=1;i<=5;i++) dfs("",i)
+    for(let i = 1;i <= 5;i++) dfs("",i)
             
     return dic.sort().indexOf(word) + 1
 }
