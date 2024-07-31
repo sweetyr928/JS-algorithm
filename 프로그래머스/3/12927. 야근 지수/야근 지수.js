@@ -1,6 +1,5 @@
 function solution(n, works) {
     if(works.reduce((a,c)=>a+=c) <= n) return 0
-    let answer = 0
     let sorted = works.sort((a,b) => a-b)
   
     while(n) {
