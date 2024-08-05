@@ -1,9 +1,9 @@
 function solution(s, n) {
-    const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const lower = "abcdefghijklmnopqrstuvwxyz";
+    const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lower = 'abcdefghijklmnopqrstuvwxyz';
     let answer= '';
 
-    for(let i = 0;i<s.length;i++){
+    for(let i = 0;i < s.length;i++){
         if(s[i] === ' ') {
             answer += ' '; 
         }else{
