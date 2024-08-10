@@ -2,7 +2,7 @@ function solution(k, tangerine) {
     let map = new Map()
     let temp = 0, i = 0
     
-    for(let i=0;i<tangerine.length;i++){
+    for(let i = 0;i < tangerine.length;i++){
         map.set(tangerine[i], (map.get(tangerine[i]) || 0) + 1)
     }
 
