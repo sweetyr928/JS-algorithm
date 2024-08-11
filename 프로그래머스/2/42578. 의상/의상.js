@@ -1,6 +1,7 @@
 function solution(clothes) {
     let map = new Map()
-    for(let i=0;i<clothes.length;i++){
+    
+    for(let i = 0;i < clothes.length;i++){
         map.set(clothes[i][1], (map.get(clothes[i][1]) || 0) + 1)
     }
      let answer = 1
