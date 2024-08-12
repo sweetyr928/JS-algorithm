@@ -7,7 +7,7 @@ function solution(maps) {
     const dfs = (x,y,cnt) => {
         let total = +cnt
         
-        for(let i=0;i<4;i++){
+        for(let i = 0;i < 4;i++){
             if(x+dx[i] >= 0 && x+dx[i] < maps.length && y+dy[i] >= 0 && y+dy[i] < maps[0].length){
                 if(newM[x+dx[i]][y+dy[i]] !== "X"){
                     let start = newM[x+dx[i]][y+dy[i]]
