@@ -4,7 +4,7 @@ function solution(n, k) {
     newN = newN.split("0").filter(el => el !== " " && el > 1)
     let prime = true
     
-    for(let i=0;i<newN.length;i++){
+    for(let i= 0;i<newN.length;i++){
         prime = true
         for(let j=2;j<=Math.sqrt(newN[i]);j++){
             if(newN[i] % j === 0) {
