@@ -1,5 +1,5 @@
 function solution(land) {
-    for(let i =1;i<land.length;i++){
+    for(let i = 1;i<land.length;i++){
         land[i][0] += Math.max(
             land[i-1][1],
             land[i-1][2],
