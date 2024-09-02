@@ -1,6 +1,6 @@
 function solution(skill, skill_trees) {
     let newSkill = {}
-    for(let i=0;i<skill.length;i++) newSkill[skill[i]] = i
+    for(let i =0;i<skill.length;i++) newSkill[skill[i]] = i
     let answer = 0
     
     for(let i=0;i<skill_trees.length;i++){
