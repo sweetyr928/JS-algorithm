@@ -1,7 +1,7 @@
 function solution(fees, records) {
     let newR = [],car = {}, map = new Map(), fee = [], temp = []
     
-    for(let i=0;i<records.length;i++){
+    for(let i =0;i<records.length;i++){
         newR.push(records[i].split(" "))
         if(!(records[i].split(" ")[1] in car)) 
             car[records[i].split(" ")[1]] = []
