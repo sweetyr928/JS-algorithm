@@ -3,7 +3,7 @@ function solution(record) {
     let newRecord = [];
     let map = new Map();
     
-    for(let i = 0;i<record.length;i++){
+    for(let i = 0;i< record.length;i++){
         newRecord.push(record[i].split(" "));
         if(record[i].split(" ")[0] !== "Leave") 
             map.set(record[i].split(" ")[1], record[i].split(" ")[2]);
