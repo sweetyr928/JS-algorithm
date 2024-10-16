@@ -2,6 +2,7 @@ function solution(gems) {
     let answer = [1, gems.length]
     const map = new Map()
     map.set(gems[0],1)
+    
     let l=0, r=0
     const all = new Set(gems).size
     
