@@ -15,6 +15,7 @@ function solution(s) {
         temp = []
         tempS = ""
       }
+        
       i++
     }
   
@@ -22,7 +23,8 @@ function solution(s) {
   
     for(let i = 0;i < newS.length;i++){
           for(let j = 0;j < newS[i].length;j++){
-            if(!ans.includes(newS[i][j])) ans.push(newS[i][j])
+            if(!ans.includes(newS[i][j])) 
+                ans.push(newS[i][j])
           }
     }
     
