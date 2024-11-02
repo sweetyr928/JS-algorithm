@@ -14,7 +14,7 @@ function solution(expression) {
         for(let exp of arr){
             while(temp.includes(exp)){
                 let idx = temp.indexOf(exp)
-                temp.splice(idx-1,3,eval(temp.slice(idx-1,idx+2).join("")))
+                temp.splice(idx-1, 3,eval(temp.slice(idx-1,idx+2).join("")))
             }
         }
         answer.push(Math.abs(temp[0]))
