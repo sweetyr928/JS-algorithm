@@ -3,7 +3,6 @@ function solution(n, costs) {
     costs.sort((a, b)=>a[2]-b[2]); //비용이 작도록 정렬 
     const vis = new Array(n).fill(0); // 방문 여부
     const bridge = new Array(costs.length).fill(0); // 다리 연결 여부
-    //다리 연결의 시작(비용 가장 적은 다리)
     
     vis[costs[0][0]] = true;
     vis[costs[0][1]] = true;
