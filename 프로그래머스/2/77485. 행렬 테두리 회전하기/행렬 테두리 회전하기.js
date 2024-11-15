@@ -9,7 +9,7 @@ function solution(rows, columns, queries) {
         }
     }
 
-    for(let el = 0;el<queries.length;el++){
+    for(let el = 0;el <queries.length;el++){
         let [x1,y1,x2,y2] = queries[el];
         const stack = [];
         
