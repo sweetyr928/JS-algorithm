@@ -1,6 +1,7 @@
 function solution(n, k) {
     let answer = []
     let arr = new Array(n).fill(1)
+    
     for (let i=1;i<n;i++) arr[i] = arr[i-1]+1
     let nth = k-1
     
