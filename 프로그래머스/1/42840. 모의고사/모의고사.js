@@ -10,6 +10,7 @@ function solution(answers) {
         if(answers[i] === two[i % two.length]) count[1]++
         if(answers[i] === three[i % three.length]) count[2]++
     }
+    
     let max = Math.max(...count)
     
     for(let i = 0;i < count.length;i++){
