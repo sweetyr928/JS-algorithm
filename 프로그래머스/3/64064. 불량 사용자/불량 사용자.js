@@ -7,6 +7,7 @@ function solution(user_id, banned_id) {
         for (let i = 0; i < uId.length; i++) {
             if (bId[i] !== '*' && uId[i] !== bId[i]) return false
         }
+        
         return true
     }
     
